@@ -1,3 +1,57 @@
-# Welcome to your Lovable project
+# EVVM Deployer
 
-TODO: Document your project here
+Web app for deploying EVVM (Ethereum Virtual Machine) contracts, registering instances on the Sepolia registry, and managing deployment manifests and signatures.
+
+## Features
+
+- **Deploy** – Full EVVM genesis deployment on Base Sepolia:
+  - Staking → EVVM Core (with CoreHashUtils) → Name Service → Estimator → Treasury → P2P Swap
+  - Automatic registration of the EVVM instance on the Ethereum Sepolia registry
+- **Registry** – Register deployed EVVMs and track deployment records
+- **Signatures** – Workflow for EVVM-related signing using `@evvm/viem-signature-library`
+- **Dashboard** – View and manage deployments
+
+## Tech stack
+
+- **Frontend:** React 18, TypeScript, Vite 8
+- **UI:** Tailwind CSS, shadcn/ui (Radix), Framer Motion
+- **Web3:** wagmi, RainbowKit, viem
+- **EVVM:** `@evvm/viem-signature-library` for ABIs and signature utilities
+
+## Prerequisites
+
+- Node.js 18+
+- npm or bun
+
+## Getting started
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server (default: http://localhost:8080)
+npm run dev
+```
+
+## Scripts
+
+| Command        | Description              |
+|----------------|--------------------------|
+| `npm run dev`  | Start Vite dev server    |
+| `npm run build`| Production build         |
+| `npm run build:dev` | Build in development mode |
+| `npm run preview`   | Preview production build |
+| `npm run lint`     | Run ESLint               |
+| `npm run test`     | Run Vitest once          |
+| `npm run test:watch` | Run Vitest in watch mode |
+
+## Project structure
+
+- `src/pages/` – Deploy, Signatures, Dashboard, Index
+- `src/lib/contracts/` – Deployment logic, bytecodes, registry integration
+- `src/hooks/` – `useEVVMDeployment` and deployment state
+- `src/components/` – UI components and Web3Provider
+
+## License
+
+Private.
